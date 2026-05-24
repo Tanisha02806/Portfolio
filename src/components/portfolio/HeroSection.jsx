@@ -1,17 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Twitter, ArrowRight } from 'lucide-react';
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Send,
+  CheckCircle2,
+  Briefcase,
+  ArrowRight
+} from 'lucide-react';
+import avatar from "./assets/Tanisha.jpeg";
 
-const roles = ['UI/UX Designer', 'Visual Creator', 'Product Designer', 'Digital Artist'];
+const roles = ['UI/UX Designer', 'Web Developer', 'Product Designer'];
 
 const P = 'hsl(263 52% 46%)';
 const PG = 'linear-gradient(135deg, hsl(263 52% 46%), hsl(280 55% 52%))';
 
+/** @param {{ avatarUrl: string }} props */
 export default function HeroSection({ avatarUrl }) {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const containerRef = useRef(null);
+  const containerRef = /** @type {React.MutableRefObject<HTMLDivElement|null>} */ (useRef(null));
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -21,6 +31,7 @@ export default function HeroSection({ avatarUrl }) {
   const avatarY = useTransform(springY, [-400, 400], [-10, 10]);
 
   useEffect(() => {
+    /** @param {MouseEvent} e */
     const handleMouse = (e) => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -33,6 +44,7 @@ export default function HeroSection({ avatarUrl }) {
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
+    /** @type {ReturnType<typeof setTimeout>|undefined} */
     let timeout;
     if (!isDeleting && displayText === currentRole) {
       timeout = setTimeout(() => setIsDeleting(true), 2400);
@@ -134,8 +146,7 @@ export default function HeroSection({ avatarUrl }) {
             className="text-sm leading-relaxed mb-8 max-w-[360px]"
             style={{ color: 'hsl(240 8% 50%)', lineHeight: '1.75' }}
           >
-            A self-taught UI/UX designer with 3+ years of experience creating
-            meaningful digital products that balance user needs with business goals.
+            I design and build digital experiences that people enjoy using. As a Web Developer and UI/UX Designer, I combine creativity with technical problem-solving to create interfaces that feel modern, intuitive, and purposeful. My work focuses on turning concepts into polished products through thoughtful design, clean development, and attention to detail. Whether it’s crafting user-centered experiences, developing responsive websites, or experimenting with new ideas, I’m always driven by the goal of building products that make an impact.
           </motion.p>
 
           {/* CTAs */}
@@ -170,9 +181,9 @@ export default function HeroSection({ avatarUrl }) {
           >
             <span className="text-xs mr-1" style={{ color: 'hsl(240 8% 60%)' }}>Follow me</span>
             {[
-              { Icon: Github, href: '#', label: 'GitHub' },
-              { Icon: Linkedin, href: '#', label: 'LinkedIn' },
-              { Icon: Twitter, href: '#', label: 'Twitter' },
+              { Icon: Github, href: 'https://github.com/Tanisha02806', label: 'GitHub' },
+              { Icon: Linkedin, href: 'https://www.linkedin.com/in/tanisha-thakur-6372912b3/', label: 'LinkedIn' },
+              { Icon: Briefcase, href: 'https://www.behance.net/tanishathakur02', label: 'Behance' },
             ].map(({ Icon, href, label }, i) => (
               <motion.a
                 key={i}
@@ -223,7 +234,7 @@ export default function HeroSection({ avatarUrl }) {
                 boxShadow: '0 20px 60px hsl(263 52% 46% / 0.12)',
               }}
             >
-              <img src={avatarUrl} alt="Tanisha Thakur" className="w-full h-full object-cover" />
+              <img src={avatar} alt="Tanisha Thakur" className="w-full h-full object-cover"/>
             </div>
 
             {/* Floating badge - Available */}
@@ -236,7 +247,7 @@ export default function HeroSection({ avatarUrl }) {
               style={{ background: '#fff', border: '1px solid hsl(260 15% 90%)', boxShadow: '0 8px 24px rgba(80,50,130,0.1)' }}
             >
               <p className="text-[10px]" style={{ color: 'hsl(240 8% 60%)' }}>Available for</p>
-              <p className="text-sm font-bold font-space" style={{ color: P }}>Freelance ✨</p>
+              <p className="text-sm font-bold font-space" style={{ color: P }}>Freelance</p>
             </motion.div>
 
             {/* Floating badge - Experience */}
@@ -249,7 +260,7 @@ export default function HeroSection({ avatarUrl }) {
               style={{ background: '#fff', border: '1px solid hsl(260 15% 90%)', boxShadow: '0 8px 24px rgba(80,50,130,0.1)' }}
             >
               <p className="text-[10px]" style={{ color: 'hsl(240 8% 60%)' }}>Experience</p>
-              <p className="text-sm font-bold font-space" style={{ color: 'hsl(240 15% 12%)' }}>3+ Years 🎯</p>
+              <p className="text-sm font-bold font-space" style={{ color: 'hsl(240 15% 12%)' }}>Fresher</p>
             </motion.div>
           </motion.div>
         </motion.div>

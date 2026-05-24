@@ -4,6 +4,12 @@ import { ExternalLink, Github, X } from 'lucide-react';
 
 const P = 'hsl(263 52% 46%)';
 
+/**
+ * @param {{
+ * project:any,
+ * index:number
+ * }} props
+ */
 export default function ProjectCard({ project }) {
   const [tapped, setTapped] = useState(false);
   const cardRef = useRef(null);

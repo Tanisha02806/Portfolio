@@ -3,20 +3,28 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 
 const P = 'hsl(263 52% 46%)';
-const filters = ['All', 'Mobile', 'Web', 'Design'];
+const filters = ['All', 'UI/UX', 'Web'];
+/** @type {Record<string, string[]>} */
 const tagMap = {
-  Mobile: ['React Native', 'Flutter'],
-  Web: ['React', 'Next.js', 'Vue.js'],
+  Web: ['React', 'Next.js', 'Vue.js', 'React Native', 'Flutter'],
   Design: ['Figma'],
 };
 
+/**
+ * @param {{
+ * projects: Array<{
+ * id: string|number,
+ * tags: string[]
+ * }>
+ * }} props
+ */
 export default function ProjectsGrid({ projects }) {
   const [active, setActive] = useState('All');
 
   const filtered =
     active === 'All'
       ? projects
-      : projects.filter((p) => p.tags.some((t) => (tagMap[active] || []).includes(t)));
+      : projects.filter(/** @param {{tags:string[]}} p */(p) => p.tags.some((t) => (tagMap[active] || []).includes(t)));
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden" style={{ background: '#fff' }}>
@@ -84,7 +92,7 @@ export default function ProjectsGrid({ projects }) {
         {/* Grid */}
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <AnimatePresence mode="popLayout">
-            {filtered.map((project, i) => (
+            {filtered.map(/** @param {{id:string|number}} project *//** @param {number} i */(project, i) => (
               <motion.div
                 key={project.id}
                 layout
