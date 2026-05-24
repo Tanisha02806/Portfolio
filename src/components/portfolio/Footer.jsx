@@ -1,26 +1,63 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Twitter, Linkedin, Mail, Send, CheckCircle2 } from 'lucide-react';
+import { Github, Linkedin, Mail, Send, CheckCircle2, Briefcase } from 'lucide-react';
 
 const P = 'hsl(263 52% 46%)';
 const PG = 'linear-gradient(135deg, hsl(263 52% 46%), hsl(280 55% 52%))';
 const socials = [
-  { Icon: Github, href: '#', label: 'GitHub' },
-  { Icon: Twitter, href: '#', label: 'Twitter' },
-  { Icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { Icon: Github, href: 'https://github.com/Tanisha02806', label: 'GitHub' },
+  { Icon: Linkedin, href: 'https://www.linkedin.com/in/tanisha-thakur-6372912b3/', label: 'LinkedIn' },
+  { Icon: Briefcase, href: 'https://www.behance.net/tanishathakur02', label: 'Behance' },
 ];
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      window.location.href = `mailto:tanishaselfthakur@gmail.com?subject=Hello Tanisha&body=From: ${email}`;
-      setEmail('');
-    }
+  /** @param {React.FormEvent<HTMLFormElement>} event */
+  const handleSubscribe = (event) => {
+    event.preventDefault();
+
+    if (!email.trim()) return;
+
+    const subject = encodeURIComponent(
+      "Following Up Regarding Your Portfolio"
+    );
+
+    const body = encodeURIComponent(
+      `
+      Hi [Your Name],
+
+      I recently came across your portfolio website and wanted to reach out after reviewing your work. I was impressed by your projects, design approach, and the overall presentation of your portfolio.
+
+      I’m currently exploring opportunities to collaborate/work with someone for [project type / role / requirement], and your profile caught my attention. I’d love to learn more about your experience, availability, and how you usually approach projects.
+
+      If you’re open to discussing potential collaboration, please let me know a convenient time to connect. You can also share any additional work, case studies, or information that you think would be helpful.
+
+      Looking forward to hearing from you.
+
+      Best regards,
+      [Client Name]
+      My email: ${email}
+      [Company / Organization (optional)]
+      [Contact Information]
+      `
+    );
+
+    const gmailUrl =
+      "https://mail.google.com/mail/?view=cm&fs=1" +
+      `&to=tanishaselfthakur@gmail.com` +
+      `&su=${subject}` +
+      `&body=${body}`;
+
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+
+    setSubmitted(true);
+    setEmail("");
+
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
   };
 
   return (
@@ -42,7 +79,7 @@ export default function Footer() {
               Tanisha<span style={{ color: P }}>.</span>
             </h3>
             <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: 'hsl(240 8% 52%)', lineHeight: '1.75' }}>
-              UI/UX Designer crafting meaningful digital products. Open to freelance and full-time opportunities.
+              Designing with purpose. Developing with precision. Open to freelance collaborations and new opportunities.
             </p>
             <div className="flex gap-2.5">
               {socials.map(({ Icon, href, label }) => (
