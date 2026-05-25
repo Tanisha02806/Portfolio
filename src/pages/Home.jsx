@@ -4,6 +4,8 @@ import HeroSection from '../components/portfolio/HeroSection';
 import WorkExperience from '../components/portfolio/WorkExperience';
 import ProjectsGrid from '../components/portfolio/ProjectsGrid';
 import Footer from '../components/portfolio/Footer';
+import FreelanceFlow from "../components/portfolio/assets/FreelanceFlow.jpeg";
+import StudyHub from "../components/portfolio/assets/StudyHub.jpeg";
 
 const AVATAR_URL = 'https://media.base44.com/images/public/6a0af822f0200687ee4b5a44/0ea58bb1b_generated_44ae5beb.png';
 
@@ -12,7 +14,7 @@ const projects = [
     id: 1,
     title: 'Freelance Collaboration Platform Mini Upwork',
     description: 'A full-stack freelance marketplace platform where clients can post projects, freelancers can apply with proposals, chat in real-time, track milestones, and leave reviews after project completion.',
-    image: 'https://media.base44.com/images/public/6a0af822f0200687ee4b5a44/eddca521d_generated_9ddd4faf.png',
+    image: FreelanceFlow,
     tags: ['React Native', 'Node.js', 'Stripe'],
     liveUrl: '#',
     githubUrl: 'https://github.com/Tanisha02806/Freelance-Collaboration-Platform-Mini-Upwork-',
@@ -21,7 +23,7 @@ const projects = [
     id: 2,
     title: 'Smart Student Productivity Dashboard',
     description: 'A modern all-in-one productivity platform designed specifically for college students to manage assignments, attendance, study sessions, notes, deadlines, and focus tracking efficiently. Built with a modern full-stack architecture and production-level frontend practices, this project demonstrates real-world dashboard development, UI/UX thinking, state management, authentication systems, analytics visualization, and scalable application design.',
-    image: 'https://media.base44.com/images/public/6a0af822f0200687ee4b5a44/0080d2236_generated_3b0878cd.png',
+    image: StudyHub,
     tags: ['React', 'D3.js', 'PostgreSQL'],
     liveUrl: '#',
     githubUrl: 'https://github.com/Tanisha02806/Smart-Student-Productivity-Dashboard',

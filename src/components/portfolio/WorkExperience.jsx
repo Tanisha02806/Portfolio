@@ -6,17 +6,17 @@ const P = 'hsl(263 52% 46%)';
 const PG = 'linear-gradient(135deg, hsl(263 52% 46%), hsl(280 55% 52%))';
 
 const highlights = [
-  { icon: TrendingUp, text: 'Improved user retention by 40%' },
-  { icon: Users, text: 'Collaborated with 15+ team members' },
-  { icon: Award, text: 'Led 10+ end-to-end client projects' },
-  { icon: Layers, text: 'Built scalable design systems' },
+  { icon: TrendingUp, text: 'Improved website responsiveness and performance' },
+  { icon: Users, text: 'Developed and maintained web application features' },
+  { icon: Award, text: 'Collaborated with cross-functional teams and stakeholders' },
+  { icon: Layers, text: 'Delivered scalable and user-friendly web solutions' },
 ];
 
 const stats = [
-  { value: '10+', label: 'Projects Delivered' },
-  { value: '3+', label: 'Years Experience' },
-  { value: '40%', label: 'Retention Increase' },
-  { value: '100%', label: 'Client Satisfaction' },
+  { value: '3+', label: 'Projects Delivered' },
+  { value: '1', label: 'Industry Internship' },
+  { value: '10+', label: 'Technologies Explored' },
+  { value: '3+', label: 'Domains Explored (Web Dev • UI/UX • AI)' },
 ];
 
 export default function WorkExperience() {
@@ -74,10 +74,10 @@ export default function WorkExperience() {
                     <Briefcase size={15} style={{ color: P }} />
                   </div>
                   <div>
-                    <h3 className="font-space font-bold text-lg leading-tight" style={{ color: 'hsl(240 15% 12%)' }}>UI/UX Designer</h3>
+                    <h3 className="font-space font-bold text-lg leading-tight" style={{ color: 'hsl(240 15% 12%)' }}>Web Developer Intern</h3>
                     <div className="flex items-center gap-1 mt-0.5">
                       <MapPin size={10} style={{ color: P }} />
-                      <span className="text-xs" style={{ color: 'hsl(240 8% 52%)' }}>Creative Agency Co. · Mumbai</span>
+                      <span className="text-xs" style={{ color: 'hsl(240 8% 52%)' }}>Shashwat Implants & Surgical Care · India</span>
                     </div>
                   </div>
                 </div>
@@ -86,16 +86,14 @@ export default function WorkExperience() {
                   style={{ background: 'hsl(140 60% 95%)', border: '1px solid hsl(140 60% 80%)', color: 'hsl(140 50% 35%)' }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  Jan 2022 – Present
+                  Jan 2025 – Jul 2025
                 </div>
               </div>
 
               <div className="h-px mb-5" style={{ background: 'hsl(260 15% 93%)' }} />
 
               <p className="text-sm leading-relaxed mb-6" style={{ color: 'hsl(240 8% 50%)', lineHeight: '1.75' }}>
-                Led end-to-end product design for 10+ client projects — from user research and
-                wireframing to high-fidelity prototypes and design systems. Collaborated closely
-                with developers and stakeholders to ship meaningful, accessible digital experiences.
+                Contributed to the development and maintenance of responsive web applications for healthcare operations. Built and optimized user interfaces, improved website performance, and collaborated with teams to create efficient and user-friendly digital solutions for internal and client-facing platforms.
               </p>
 
               {/* Highlights */}
@@ -121,7 +119,7 @@ export default function WorkExperience() {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
-                {['Figma', 'User Research', 'Prototyping', 'Design Systems', 'Accessibility', 'Wireframing'].map((skill, i) => (
+                {['HTML', 'Tailwind CSS', 'JavaScript', 'React', 'UI Development', 'Responsive Design', 'API Integration', 'Git', 'Node.js', 'MongoDB', 'Data Management'].map((skill, i) => (
                   <motion.span
                     key={skill}
                     initial={{ opacity: 0, scale: 0.85 }}
