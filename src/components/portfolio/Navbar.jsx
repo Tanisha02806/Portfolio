@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Portfolio from "../components/portfolio/assets/CV.pdf";
 
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Portfolio', href: Portfolio },
 ];
 
 export default function Navbar() {
