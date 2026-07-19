@@ -7,7 +7,7 @@ const filters = ['All', 'UI/UX', 'Web'];
 /** @type {Record<string, string[]>} */
 const tagMap = {
   Web: ['React', 'Next.js', 'Vue.js', 'React Native', 'Flutter'],
-  Design: ['Figma'],
+  Design: ['Figma', 'UI/UX', 'Mobile Design'],
 };
 
 /**

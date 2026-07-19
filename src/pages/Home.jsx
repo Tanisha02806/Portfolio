@@ -6,6 +6,7 @@ import ProjectsGrid from '../components/portfolio/ProjectsGrid';
 import Footer from '../components/portfolio/Footer';
 import FreelanceFlow from "../components/portfolio/assets/FreelanceFlow.jpeg";
 import StudyHub from "../components/portfolio/assets/StudyHub.jpeg";
+import Taskade from "../components/portfolio/assets/Taskade.jpeg";
 
 const AVATAR_URL = 'https://media.base44.com/images/public/6a0af822f0200687ee4b5a44/0ea58bb1b_generated_44ae5beb.png';
 
@@ -28,15 +29,15 @@ const projects = [
     liveUrl: '#',
     githubUrl: 'https://github.com/Tanisha02806/Smart-Student-Productivity-Dashboard',
   },
-  // {
-  //   id: 3,
-  //   title: 'Social Platform',
-  //   description: 'A community-driven social media app with real-time messaging.',
-  //   image: 'https://media.base44.com/images/public/6a0af822f0200687ee4b5a44/1ac0509e8_generated_cd3bbe0c.png',
-  //   tags: ['Next.js', 'Socket.io', 'MongoDB'],
-  //   liveUrl: '#',
-  //   githubUrl: '#',
-  // },
+  {
+    id: 3,
+    title: 'Taskade – Student Task Planner UI/UX Case Study',
+    description: 'Taskade is a student productivity mobile app designed to simplify task management, scheduling, and focus tracking. This UI/UX case study showcases research, wireframes, user flows, and modern mobile interfaces built with a clean blue-and-white aesthetic. Features include task planning, reminders, focus mode, progress analytics, and an intuitive student-friendly experience.',
+    image: Taskade,
+    tags: ['Figma', 'UI/UX', 'Mobile Design'],
+    liveUrl: '#',
+    githubUrl: 'https://www.behance.net/gallery/249435057/Taskade-Student-Task-Planner-UIUX-Case-Study',
+  },
   // {
   //   id: 4,
   //   title: 'Fitness Tracker',
