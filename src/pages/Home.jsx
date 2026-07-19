@@ -31,7 +31,7 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Taskade – Student Task Planner UI/UX Case Study',
+    title: 'Taskade',
     description: 'Taskade is a student productivity mobile app designed to simplify task management, scheduling, and focus tracking. This UI/UX case study showcases research, wireframes, user flows, and modern mobile interfaces built with a clean blue-and-white aesthetic. Features include task planning, reminders, focus mode, progress analytics, and an intuitive student-friendly experience.',
     image: Taskade,
     tags: ['Figma', 'UI/UX', 'Mobile Design'],
