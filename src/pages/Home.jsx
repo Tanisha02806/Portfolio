@@ -6,7 +6,7 @@ import ProjectsGrid from '../components/portfolio/ProjectsGrid';
 import Footer from '../components/portfolio/Footer';
 import FreelanceFlow from "../components/portfolio/assets/FreelanceFlow.jpeg";
 import StudyHub from "../components/portfolio/assets/StudyHub.jpeg";
-import Taskade from "../components/portfolio/assets/Taskade.png";
+import Taskade from "../components/portfolio/assets/Taskade.jpeg";
 
 const AVATAR_URL = 'https://media.base44.com/images/public/6a0af822f0200687ee4b5a44/0ea58bb1b_generated_44ae5beb.png';
 
